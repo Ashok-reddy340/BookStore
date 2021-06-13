@@ -1,3 +1,8 @@
+{% extends 'bookapp/base.html' %}
+
+{% block body %}
+<img width="100" height="100" src="{{book.book_image.url}}"><br>
 Book Name : {{ book.name }}<br>
 Book author : {{ book.author }}<br>
 Price : {{ book.price }}<br>
+{% endblock%}
