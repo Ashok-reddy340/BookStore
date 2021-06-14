@@ -5,4 +5,5 @@
 Book Name : {{ book.name }}<br>
 Book author : {{ book.author }}<br>
 Price : {{ book.price }}<br>
+<a class ="btn btn-warning" href="{% url 'bookapp:update' book.id %}">Update</a>
 {% endblock%}
