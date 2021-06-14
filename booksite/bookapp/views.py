@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Book
+from .forms import BookForm
+
 
 # Create your views here.
 def index(request):
@@ -25,3 +27,10 @@ def add_book(request):
         book.save()
 
     return render(request,'bookapp/add_book.html')
+def update(request,id):
+    book = Book.objects.get(id=id)
+    form = BookForm(request.POST or None, request.FILES, instance=book)
+    if form.is_valid():
+        form.save()
+        return redirect('/index/')
+    return render(request,'bookapp/edit.html',{ 'form':form,'book':book})
