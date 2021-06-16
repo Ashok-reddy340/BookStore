@@ -1,2 +1,2 @@
 # BookStore
-creating bbokatrore webapp using python django
+creating BookStore webapp using python django
